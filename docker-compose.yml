@@ -17,8 +17,8 @@ services:
     environment:
       - ME_CONFIG_MONGODB_ADMINUSERNAME=root
       - ME_CONFIG_MONGODB_ADMINPASSWORD=example
-      - ME_CONFIG_MONGODB_SERVER=mongo
-      - ME_CONFIG_DEBUG=true
+      # - ME_CONFIG_MONGODB_SERVER=mongo
+      # - ME_CONFIG_DEBUG=true
     depends_on:
       - mongo
 
