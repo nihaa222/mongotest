@@ -10,7 +10,6 @@ services:
     environment:
       - MONGO_INITDB_ROOT_USERNAME=admin  # Root username
       - MONGO_INITDB_ROOT_PASSWORD=supersecret  # Root password
-      # - MONGO_INITDB_DATABASE=mydatabase  # Default database
     volumes:
       - mongo-data:/data/db
 
@@ -27,4 +26,6 @@ services:
       - ME_CONFIG_MONGO_ADMINPASSWORD=supersecret
     depends_on:
       - mongodb
-   
+
+volumes:
+  mongo-data:
