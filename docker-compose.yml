@@ -19,3 +19,5 @@ services:
       - ME_CONFIG_MONGODB_ADMINPASSWORD=example
     depends_on:
       - mongo
+
+      #ll
