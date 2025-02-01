@@ -21,3 +21,4 @@ services:
       - ME_CONFIG_DEBUG=true
     depends_on:
       - mongodb  # Ensure this matches the MongoDB service name
+      #j
