@@ -1,23 +1,23 @@
 version: '3'
 services:
-  
   mongodb:
     image: mongo
     ports:
-     - 27017:27017
+      - 27017:27017
     environment:
-     - MONGO_INITDB_ROOT_USERNAME=admin
-     - MONGO_INITDB_ROOT_PASSWORD=supersecret
-     
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=supersecret
+    restart: always  # Add restart policy for MongoDB as well
+
   mongo-express:
     image: mongo-express
     restart: always
     ports:
-     - 8081:8081
+      - 8081:8081
     environment:
-     - ME_CONFIG_MONGODB_ADMINUSERNAME=admin
-     - ME_CONFIG_MONGODB_ADMINPASSWORD=supersecret
-     - ME_CONFIG_MONGODB_SERVER=mongodb
-     - ME_CONFIG_DEBUG=true
+      - ME_CONFIG_MONGODB_ADMINUSERNAME=admin
+      - ME_CONFIG_MONGODB_ADMINPASSWORD=supersecret
+      - ME_CONFIG_MONGODB_SERVER=mongodb  # Ensure this matches the MongoDB service name
+      - ME_CONFIG_DEBUG=true
     depends_on:
-     - "mongodb"
+      - mongodb  # Ensure this matches the MongoDB service name
